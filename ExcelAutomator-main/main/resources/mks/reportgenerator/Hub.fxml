@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mks.reportgenerator.SceneController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="105.0" prefHeight="458.0" prefWidth="169.0">
+         <children>
+            <TreeView fx:id="selectionTree" onMouseClicked="#selectPane" prefHeight="458.0" prefWidth="170.0" />
+         </children>
+      </VBox>
+      <Separator layoutX="244.0" layoutY="564.0" prefWidth="200.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Button fx:id="export_btn" layoutX="777.0" layoutY="560.0" mnemonicParsing="false" onAction="#handle_export" prefHeight="25.0" prefWidth="103.0" text="Export To Excel" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="10.0" />
+      <ImageView fitHeight="105.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="495.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="731.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@mks_logo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="emp_incentive_pane" layoutX="169.0" prefHeight="552.0" prefWidth="722.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Incentive For:" wrappingWidth="237.7109375" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Period:" wrappingWidth="59.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="emp_setting" layoutX="350.0" layoutY="51.0" mnemonicParsing="false" onAction="#get_emp_incentive_type" text="Setting" />
+            <RadioButton fx:id="emp_filing" layoutX="275.0" layoutY="51.0" mnemonicParsing="false" onAction="#get_emp_incentive_type" text="Filing" />
+            <RadioButton fx:id="emp_polishing" layoutX="425.0" layoutY="48.0" mnemonicParsing="false" onAction="#get_emp_incentive_type" prefHeight="23.0" prefWidth="79.0" text="Polishing" />
+            <DatePicker fx:id="emp_date_start" layoutX="73.0" layoutY="101.0" onAction="#emp_incentive_period" prefHeight="25.0" prefWidth="105.0" promptText="Start" />
+            <DatePicker fx:id="emp_date_end" layoutX="195.0" layoutY="101.0" onAction="#emp_incentive_period" prefHeight="25.0" prefWidth="105.0" promptText="End" />
+            <Text layoutX="313.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gold Rate:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="184.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField layoutX="397.0" layoutY="101.0" prefHeight="25.0" prefWidth="79.0" />
+            <Text layoutX="487.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Platinum Rate:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField layoutX="602.0" layoutY="102.0" prefHeight="25.0" prefWidth="79.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sub_incentive_pane" layoutX="169.0" prefHeight="552.0" prefWidth="722.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subcontractor Incentive For:" wrappingWidth="273.7109375" AnchorPane.topAnchor="43.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Period:" wrappingWidth="59.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="sub_setting" layoutX="375.0" layoutY="51.0" mnemonicParsing="false" onAction="#get_sub_incentive_type" text="Setting" />
+            <RadioButton fx:id="sub_filing" layoutX="300.0" layoutY="51.0" mnemonicParsing="false" onAction="#get_sub_incentive_type" text="Filing" />
+            <RadioButton fx:id="sub_polishing" layoutX="450.0" layoutY="48.0" mnemonicParsing="false" onAction="#get_sub_incentive_type" prefHeight="23.0" prefWidth="79.0" text="Polishing" />
+            <DatePicker fx:id="sub_calendar_start" layoutX="73.0" layoutY="101.0" onAction="#sub_incentive_start" prefHeight="25.0" prefWidth="105.0" promptText="Start" />
+            <DatePicker fx:id="sub_calendar_end" layoutX="195.0" layoutY="101.0" onAction="#sub_incentive_end" prefHeight="25.0" prefWidth="105.0" promptText="End" />
+            <Text layoutX="313.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gold Rate:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="184.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="sub_gold_rate_field" layoutX="397.0" layoutY="101.0" onAction="#get_sub_gold_rate" prefHeight="25.0" prefWidth="79.0" />
+            <Text layoutX="487.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Platinum Rate:">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="sub_plat_rate_field" layoutX="602.0" layoutY="102.0" onAction="#get_sub_platinum_rate" prefHeight="25.0" prefWidth="79.0" />
+            <Text fx:id="errorMsg" layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR HERE">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="home" layoutX="169.0" prefHeight="552.0" prefWidth="722.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane fx:id="homeBackground" prefHeight="563.0" prefWidth="734.0" />
+            <Text layoutX="4.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome - Select a report to begin" textAlignment="CENTER" wrappingWidth="723.13671875">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="322.0" fitWidth="524.0" layoutX="104.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" y="20.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ProgressBar fx:id="progressBar" layoutX="607.0" layoutY="573.0" prefHeight="18.0" prefWidth="155.0" />
+   </children>
+</AnchorPane>
