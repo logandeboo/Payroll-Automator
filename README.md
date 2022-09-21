@@ -1,4 +1,4 @@
-#Payroll Automator
+# Payroll Automator
 
 Payroll Automator is a project which automated a payroll report for a medium sized company. This program evolved a legacy system and reduced production time from hours to less than a few minutes. 
 
