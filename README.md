@@ -1,6 +1,6 @@
 #Payroll Automator
 
-Payroll Automator is a project which automated a payroll report for a medium sized company. Working backwards from an excel sheet that was previously manually created, this program reduced production time from a few hours to a couple minutes. 
+Payroll Automator is a project which automated a payroll report for a medium sized company. This program evolved a legacy system and reduced production time from hours to less than a few minutes. 
 
 ### Tech Specs
 ###### Back End
